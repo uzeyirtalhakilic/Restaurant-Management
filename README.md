@@ -151,4 +151,4 @@ Modern ve kullanıcı dostu bir restoran yönetim sistemi. Bu sistem, restoranla
 
 Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
 
-Proje Linki: [https://github.com/uzeyir/Restaurant_Management](https://github.com/uzeyir/Restaurant_Management)
+Proje Linki: [https://github.com/uzeyir/Restaurant-Management](https://github.com/uzeyir/Restaurant-Management)
