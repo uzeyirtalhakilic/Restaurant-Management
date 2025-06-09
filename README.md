@@ -58,8 +58,10 @@ Modern ve kullanıcı dostu bir restoran yönetim sistemi. Bu sistem, restoranla
    ```
 
 2. **Backend Kurulumu**
-
    ```bash
+   
+   ### index.js dosyasında gerekli veritabanı değişikliklerinizi yapın.
+   
    # Backend klasörüne gidin
    cd backend
 
@@ -70,7 +72,7 @@ Modern ve kullanıcı dostu bir restoran yönetim sistemi. Bu sistem, restoranla
    npm start
    ```
 
-3. **Frontend Kurulumu**
+4. **Frontend Kurulumu**
 
    ```bash
    # Frontend klasörüne gidin
@@ -96,59 +98,11 @@ Modern ve kullanıcı dostu bir restoran yönetim sistemi. Bu sistem, restoranla
 
 ## 🌐 Müşteri Kullanım
 
-1. Tarayıcınızda `http://localhost:5173/table/:tableNo (ex:http://localhost:5173/table/1)` adresine gidin.
+1. Tarayıcınızda `http://localhost:5173/table/:tableNo` (ex:`http://localhost:5173/table/1`) adresine gidin.
 2. Kasaya gitmeden siparişinizi verebilirsiniz.
-
-## 📝 Veritabanı Yapısı
-
-### Tables (Masalar)
-
-- id: Benzersiz masa numarası
-- type: Masa tipi (İçerisi, Balkon, Bahçe, VIP)
-- name: Masa adı
-- description: Masa açıklaması
-- username: Giriş kullanıcı adı
-- password: Giriş şifresi
-
-### Menu Items (Menü Ürünleri)
-
-- id: Benzersiz ürün numarası
-- name: Ürün adı
-- description: Ürün açıklaması
-- price: Ürün fiyatı
-- image_url: Ürün görseli
-
-### Orders (Siparişler)
-
-- id: Benzersiz sipariş numarası
-- status: Sipariş durumu
-- created_at: Oluşturulma tarihi
-- table_id: Masa numarası
-
-### Order Items (Sipariş Detayları)
-
-- id: Benzersiz detay numarası
-- order_id: Sipariş numarası
-- menu_item_id: Ürün numarası
-- quantity: Miktar
-
-### Staff (Personel)
-
-- id: Benzersiz personel numarası
-- name: Personel adı
-- hire_date: İşe başlama tarihi
-- work_hours: Çalışma saatleri
-
-## 🤝 Katkıda Bulunma
-
-1. Bu depoyu fork edin
-2. Yeni bir branch oluşturun (`git checkout -b feature/amazing-feature`)
-3. Değişikliklerinizi commit edin (`git commit -m 'Add some amazing feature'`)
-4. Branch'inizi push edin (`git push origin feature/amazing-feature`)
-5. Pull Request oluşturun
 
 ## 📄 Lisans
 
 Bu proje MIT lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
 
-Proje Linki: [https://github.com/uzeyir/Restaurant-Management](https://github.com/uzeyir/Restaurant-Management)
+Proje Linki: [https://github.com/uzeyirtalhakilic/Restaurant-Management](https://github.com/uzeyirtalhakilic/Restaurant-Management)
