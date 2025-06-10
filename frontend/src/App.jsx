@@ -5,7 +5,6 @@ import { CustomerCartProvider } from './context/CustomerCartContext';
 import Login from './pages/Login';
 import Home from './pages/Home';
 import CustomerOrder from './pages/CustomerOrder';
-import PaymentMethod from './pages/PaymentMethod';
 
 function PrivateRoute({ children }) {
   const { user } = useAuth();
@@ -23,7 +22,6 @@ function App() {
             <Routes>
               <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
               <Route path="/table/:tableId" element={<CustomerOrder />} />
-              <Route path="/payment-method" element={<PaymentMethod />} />
               
               {/* Admin sayfaları - PrivateRoute ile */}
               <Route

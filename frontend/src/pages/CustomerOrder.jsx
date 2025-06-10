@@ -117,18 +117,41 @@ const CustomerOrder = () => {
       })),
       total_amount: totalAmount,
       status: 'Hazırlanıyor',
-      payment_status: 'Ödendi',
+      payment_status: 'Ödenmedi',
       notes: orderNote.trim(),
       payment_method: 'Nakit'
     };
 
-    localStorage.setItem('pendingOrder', JSON.stringify(orderData));
-    navigate('/payment-method', { 
-      state: { 
-        orderData,
-        fromCustomerOrder: true 
+    try {
+      await new Promise(resolve => setTimeout(resolve, 1500));
+
+      const response = await fetch('http://localhost:3000/order', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...orderData,
+          payment_method: "Nakit",
+          payment_status:  "Ödenmedi"
+        })
+      });
+
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.error || 'Sipariş oluşturulamadı');
       }
-    });
+
+      setSuccess('Siparişiniz başarıyla alındı!');
+      clearCart();
+      localStorage.removeItem('pendingOrder');
+
+      setTimeout(() => {
+        navigate(`/table/${orderData.table_id}`);
+      }, 2000);
+    } catch (err) {
+      setError(err.message || 'Ödeme işlemi sırasında bir hata oluştu');
+    } finally {
+      setLoading(false);
+    }
   };
 
   // Filtrelenmiş menü öğeleri

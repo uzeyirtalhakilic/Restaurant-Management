@@ -6,7 +6,6 @@ import Kitchen from './Kitchen';
 import UpdateMenuItems from './UpdateMenuItems';
 import Tables from './Tables';
 import Staff from './Staff';
-import PaymentMethod from './PaymentMethod';
 import Ingredients from './Ingredients';
 import PastOrders from './PastOrders';
 import Statistics from './Statistics';
@@ -118,7 +117,6 @@ function Home() {
             <Route path="/staff" element={<Staff />} />
             <Route path="/statistics" element={<Statistics />} />
             <Route path="/past-orders" element={<PastOrders />} />
-            <Route path="/payment-method" element={<PaymentMethod />} />
             <Route path="/ingredients" element={<Ingredients />} />
           </Routes>
         </div>
