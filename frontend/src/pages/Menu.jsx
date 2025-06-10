@@ -100,7 +100,9 @@ function Menu() {
     }
   };
 
-  const totalAmount = Number(unpaidOrders.reduce((sum, item) => sum + item.total_price, 0)).toFixed(2);
+  const totalAmount = unpaidOrders.length > 0 
+    ? Number(unpaidOrders.reduce((sum, item) => sum + item.total_price, 0)).toFixed(2)
+    : '0.00';
 
   // Group tables by type
   const groupedTables = tables.reduce((acc, table) => {
@@ -306,7 +308,7 @@ function Menu() {
             ? { 
                 ...order, 
                 quantity: order.quantity + 1,
-                total_price: (order.quantity + 1) * order.unit_price
+                total_price: Number((order.quantity + 1) * order.unit_price)
               }
             : order
         );
@@ -315,8 +317,8 @@ function Menu() {
           menu_item_id: item.id,
           menu_item_name: item.name,
           quantity: 1,
-          unit_price: item.price,
-          total_price: item.price,
+          unit_price: Number(item.price),
+          total_price: Number(item.price),
           orderIds: new Set()
         }];
       }
