@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { motion, AnimatePresence } from 'framer-motion';
+import StaffScheduleCalendar from '../components/StaffScheduleCalendar';
+import { parseISO, format, getDay } from 'date-fns';
 
 const formatDate = (dateStr) => {
   const d = new Date(dateStr);
@@ -676,6 +678,7 @@ const Staff = () => {
           )}
         </AnimatePresence>
       </div>
+      <StaffScheduleCalendar />
     </div>
   );
 };

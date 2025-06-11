@@ -22,7 +22,7 @@ app.use((req, res, next) => {
 const db = mysql.createConnection({
   host: 'localhost',
   user: 'root',
-  password: 'Uzeyir1234',
+  password: 'aliosman123',
   database: 'Restaurant_ordering'
 });
 
@@ -1334,7 +1334,7 @@ app.get('/statistics', (req, res) => {
         `SELECT 
           COUNT(*) as total_orders,
           SUM(CASE WHEN status = 'İptal Edildi' THEN 1 ELSE 0 END) as canceled_orders,
-          SUM(CASE WHEN status = 'Tamamlandı' THEN 1 ELSE 0 END) as completed_orders,
+          SUM(CASE WHEN payment_status = 'Ödendi' THEN 1 ELSE 0 END) as completed_orders,
           SUM(CASE WHEN status = 'Hazırlanıyor' THEN 1 ELSE 0 END) as pending_orders
         FROM orders 
         WHERE created_at >= DATE_SUB(NOW(), INTERVAL 30 DAY)`,
