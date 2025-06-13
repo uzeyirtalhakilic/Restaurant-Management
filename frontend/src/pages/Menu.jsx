@@ -127,7 +127,7 @@ function Menu() {
       console.log('API\'den gelen ham veri:', data);
       
       // Sadece ödenmemiş siparişleri filtrele
-      const unpaidOrders = data.filter(order => order.payment_status === 'Ödenmedi');
+      const unpaidOrders = data.filter(order => order.payment_status === 'Ödenmedi' && !order.status === 'İptal Edildi');
       console.log('Ödenmemiş siparişler:', unpaidOrders);
       
       // Tüm ürünleri birleştir ve sipariş ID'lerini sakla
