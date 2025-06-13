@@ -11,29 +11,33 @@ function PrivateRoute({ children }) {
   return user ? children : <Navigate to="/login" />;
 }
 
-function App() {
+function AppRoutes() {
   const { user } = useAuth();
+  return (
+    <Router>
+      <Routes>
+        <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
+        <Route path="/table/:tableId" element={<CustomerOrder />} />
+        {/* Admin sayfaları - PrivateRoute ile */}
+        <Route
+          path="/*"
+          element={
+            <PrivateRoute>
+              <Home />
+            </PrivateRoute>
+          }
+        />
+      </Routes>
+    </Router>
+  );
+}
 
+function App() {
   return (
     <AuthProvider>
       <CartProvider>
         <CustomerCartProvider>
-          <Router>
-            <Routes>
-              <Route path="/login" element={user ? <Navigate to="/" replace /> : <Login />} />
-              <Route path="/table/:tableId" element={<CustomerOrder />} />
-              
-              {/* Admin sayfaları - PrivateRoute ile */}
-              <Route
-                path="/*"
-                element={
-                  <PrivateRoute>
-                    <Home />
-                  </PrivateRoute>
-                }
-              />
-            </Routes>
-          </Router>
+          <AppRoutes />
         </CustomerCartProvider>
       </CartProvider>
     </AuthProvider>
