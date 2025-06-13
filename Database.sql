@@ -60,15 +60,15 @@ CREATE TABLE orders (
 );
 
 INSERT INTO orders (status, created_at, table_id, payment_method, payment_status, total_amount, notes) VALUES
-('Teslim Edildi', '2024-05-13 12:30:00', 1, 'Kredi Kartı', 'Ödendi', 185.00, 'Ekstra sos istendi'),
+('Hazır', '2024-05-13 12:30:00', 1, 'Kredi Kartı', 'Ödendi', 185.00, 'Ekstra sos istendi'),
 ('Hazır', '2024-05-13 13:15:00', 2, 'Nakit', 'Ödendi', 110.00, 'Vejetaryen menü'),
 ('Hazırlanıyor', '2024-05-13 14:00:00', 3, 'Kredi Kartı', 'Ödenmedi', 250.00, 'VIP müşteri'),
-('Teslim Edildi', '2024-05-13 15:30:00', 4, 'Banka Kartı', 'Ödendi', 160.00, NULL),
+('Hazır ', '2024-05-13 15:30:00', 4, 'Banka Kartı', 'Ödendi', 160.00, NULL),
 ('Hazırlanıyor', '2024-05-13 16:45:00', 5, 'Mobil Ödeme', 'Ödenmedi', 95.00, 'Öğle menüsü'),
 ('İptal Edildi', '2024-05-13 17:30:00', 6, 'Kredi Kartı', 'İptal Edildi', 0.00, 'Müşteri iptal etti'),
 ('Hazır', '2024-05-13 18:15:00', 7, 'Nakit', 'Ödendi', 320.00, 'İş yemeği'),
 ('Hazırlanıyor', '2024-05-13 19:00:00', 8, 'Kredi Kartı', 'Ödenmedi', 180.00, 'Akşam yemeği'),
-('Teslim Edildi', '2024-05-13 20:30:00', 9, 'Banka Kartı', 'Ödendi', 75.00, 'Öğrenci menüsü'),
+('Hazır', '2024-05-13 20:30:00', 9, 'Banka Kartı', 'Ödendi', 75.00, 'Öğrenci menüsü'),
 ('Hazır', '2024-05-13 21:15:00', 10, 'Mobil Ödeme', 'Ödendi', 450.00, 'Özel gün');
 
 -- 4. order_items tablosu
